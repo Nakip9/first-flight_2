@@ -39,7 +39,7 @@ def contact():
 
     try:
         msg = Message(
-            subject="First Flight Travels Contact",
+            subject="AwabTravel Contact",
             recipients=[recipient],
             body=f"Name: {name}\nEmail: {email}\n\n{message}",
             reply_to=email,
