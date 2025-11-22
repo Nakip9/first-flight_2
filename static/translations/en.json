@@ -1,0 +1,106 @@
+{
+  "brand": "First Flight",
+  "hotline": {
+    "text": "24/7 Hotline: +1 (555) 123-4567"
+  },
+  "nav": {
+    "home": "Home",
+    "destinations": "Destinations",
+    "packages": "Packages",
+    "contact": "Connect"
+  },
+  "hero": {
+    "title": "Discover Your Next Adventure",
+    "subtitle": "Experience the world like never before with our curated travel packages and personalized service.",
+    "cta": "Explore Packages",
+    "secondary": "Get Free Consultation"
+  },
+  "destinations": {
+    "title": "Top Destinations",
+    "subtitle": "Hand-picked places loved by our travelers.",
+    "cards": {
+      "paris": {
+        "title": "Paris, France",
+        "body": "Romantic getaways, art, and culinary delights."
+      },
+      "bali": {
+        "title": "Bali, Indonesia",
+        "body": "Pristine beaches, tropical forests, and wellness retreats."
+      },
+      "cappadocia": {
+        "title": "Cappadocia, Türkiye",
+        "body": "Hot air balloons and surreal landscapes."
+      }
+    }
+  },
+  "stats": {
+    "trips": "Trips Organized",
+    "satisfaction": "Satisfaction Rate",
+    "destinations": "Destinations",
+    "support": "Support Hours"
+  },
+  "packages": {
+    "title": "Featured Packages",
+    "subtitle": "Ready-to-go itineraries designed by experts.",
+    "tabs": {
+      "europe": "European Tours",
+      "asia": "Asian Adventures",
+      "hajj": "Hajj & Umrah"
+    },
+    "cards": {
+      "cities": {
+        "title": "Classic Cities",
+        "body": "7 days across Paris, Rome, and Barcelona with guided tours.",
+        "price": "Consultation Required"
+      },
+      "islands": {
+        "title": "Island Escape",
+        "body": "10 days in Bali and the Maldives with beachfront stays.",
+        "price": "Consultation Required"
+      },
+      "adventure": {
+        "title": "Adventure Trails",
+        "body": "12 days hiking, rafting, and balloon rides in Türkiye.",
+        "price": "Consultation Required"
+      },
+      "hajj": {
+        "title": "Hajj Packages",
+        "body": "Spiritual journey to Makkah and Madinah.",
+        "price": "Consultation Required"
+      },
+      "umrah": {
+        "title": "Umrah Packages",
+        "body": "Comfortable Umrah with comprehensive services.",
+        "price": "Consultation Required"
+      },
+      "cta": "Book Now"
+    }
+  },
+  "contact": {
+    "title": "Connect With Us",
+    "subtitle": "We're here to make your travel dreams come true.",
+    "cta": "Start now",
+    "whatsapp": {
+      "title": "WhatsApp Business",
+      "body": "Open a chat with a pre-filled message."
+    },
+    "messenger": {
+      "title": "Messenger",
+      "body": "Message us directly on Facebook."
+    },
+    "instagram": {
+      "title": "Instagram",
+      "body": "See stories and DM us in seconds."
+    },
+    "phone": {
+      "title": "Call Us",
+      "body": "Tap to dial our concierge desk."
+    }
+  },
+  "cta": {
+    "quick": "Quick Connect"
+  },
+  "footer": {
+    "copy": "© 2024 First Flight Travels. All rights reserved."
+  }
+}
