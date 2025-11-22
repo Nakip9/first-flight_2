@@ -2,9 +2,10 @@ import { initI18n, setLanguage } from './i18n.js';
 
 class TravelApp {
     constructor() {
-        this.packages = {
+        this.services = {
             europe: [
                 {
+                    key: 'europe.grandTour',
                     title: "European Grand Tour",
                     destination: "France, Italy, Spain",
                     image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1",
@@ -16,33 +17,36 @@ class TravelApp {
             ],
             asia: [
                 {
+                    key: 'asia.signature',
                     title: "Asian Adventure",
                     destination: "Japan, Thailand, Vietnam",
                     image: "https://images.unsplash.com/photo-1540959733332-8ab4de18bee0",
                     duration: "12 Days",
                     price: "Consultation Required",
                     features: ["Cultural Tours", "Street Food", "Temples", "Local Guides"],
-                    badge: "Cultural"
+                    badge: "Cultural",
                 }
             ],
             hajj: [
                 {
-                    title: "Hajj Packages",
+                    key: 'hajj.hajj',
+                    title: "Hajj Services",
                     destination: "Makkah, Madinah",
                     image: "https://images.unsplash.com/photo-1547994777-8d47e7d45e1f",
                     duration: "14-30 Days",
                     price: "Consultation Required",
                     features: ["5-Star Hotels", "Ziyarat Tours", "Expert Guides", "Complete Visa Processing"],
-                    badge: "Spiritual"
+                    badge: "Spiritual",
                 },
                 {
-                    title: "Umrah Packages",
+                    key: 'hajj.umrah',
+                    title: "Umrah Services",
                     destination: "Makkah, Madinah",
                     image: "https://images.unsplash.com/photo-1570554520913-f3eabf1b72a6",
                     duration: "7-14 Days",
                     price: "Consultation Required",
                     features: ["Flexible Dates", "Comfortable Accommodation", "Transportation", "Spiritual Guidance"],
-                    badge: "Flexible"
+                    badge: "Flexible",
                 }
             ]
         };
@@ -85,7 +89,7 @@ class TravelApp {
                 ${this.renderHero()}
                 ${this.renderDestinations()}
                 ${this.renderStats()}
-                ${this.renderPackages()}
+                ${this.renderServices()}
                 ${this.renderContact()}
             </main>
             ${this.renderFloatingCTA()}
@@ -114,13 +118,14 @@ class TravelApp {
         return `
             <nav class="navbar">
                 <a href="#hero" class="logo-link">
-                    <img src="https://img.icons8.com/?size=100&id=69543&format=png&color=000000" alt="First Flight" class="logo-img" />
-                    <span class="logo-text">First Flight</span>
+                    <img src="https://img.icons8.com/?size=100&id=69543&format=png&color=000000" alt="AwabTravel" class="logo-img" />
+                    <span class="logo-text" data-i18n="brand">AwabTravel</span>
                 </a>
                 <div class="nav-links">
                     <a href="#hero" class="nav-link" data-i18n="nav.home">Home</a>
                     <a href="#destinations" class="nav-link" data-i18n="nav.destinations">Destinations</a>
-                    <a href="#packages" class="nav-link" data-i18n="nav.packages">Packages</a>
+                    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                    <a href="/about" class="nav-link" data-i18n="nav.about">About</a>
                     <a href="#contact" class="nav-link" data-i18n="nav.contact">Connect</a>
                     <div class="language-switcher">
                         <select id="language-switcher">
@@ -142,10 +147,10 @@ class TravelApp {
                 <div class="container" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                     <div class="hero-content">
                         <h1 class="hero-title" data-i18n="hero.title">Discover Your Next Adventure</h1>
-                        <p class="hero-subtitle" data-i18n="hero.subtitle">Experience the world like never before with our curated travel packages and personalized service.</p>
+                        <p class="hero-subtitle" data-i18n="hero.subtitle">Experience the world like never before with our curated travel services and personalized care.</p>
                         <div class="hero-actions">
-                            <a href="#packages" class="btn btn-primary">
-                                <span data-i18n="hero.cta">Explore Packages</span>
+                            <a href="#services" class="btn btn-primary">
+                                <span data-i18n="hero.cta">Explore Services</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                             <a href="#contact" class="btn btn-secondary">
@@ -263,27 +268,27 @@ class TravelApp {
         `;
     }
 
-    renderPackages() {
+    renderServices() {
         return `
-            <section id="packages" class="packages-section">
+            <section id="services" class="services-section">
                 <div class="container">
                     <div class="section-header fade-in-up">
-                        <h2 data-i18n="packages.title">Featured Packages</h2>
-                        <p data-i18n="packages.subtitle">Ready-to-go itineraries designed by experts.</p>
+                        <h2 data-i18n="services.title">Featured Services</h2>
+                        <p data-i18n="services.subtitle">Ready-to-go itineraries designed by experts.</p>
                     </div>
                     <div class="package-tabs">
-                        <button class="tab-btn active" data-tab="europe">European Tours</button>
-                        <button class="tab-btn" data-tab="asia">Asian Adventures</button>
-                        <button class="tab-btn" data-tab="hajj">Hajj & Umrah</button>
+                        <button class="tab-btn active" data-tab="europe" data-i18n="services.tabs.europe">European Journeys</button>
+                        <button class="tab-btn" data-tab="asia" data-i18n="services.tabs.asia">Asian Adventures</button>
+                        <button class="tab-btn" data-tab="hajj" data-i18n="services.tabs.hajj">Hajj & Umrah</button>
                     </div>
-                    <div class="packages-grid" id="package-content">
-                        ${this.renderPackageCards('europe')}
+                    <div class="packages-grid services-grid" id="package-content">
+                        ${this.renderServiceCards('europe')}
                     </div>
                     <div class="consultation-cta fade-in-up" style="text-align: center; margin-top: 3rem;">
-                        <h3 style="margin-bottom: 1rem; color: #0f172a;">Get Free Consultation</h3>
-                        <p style="margin-bottom: 2rem; color: #64748b;">Let our experts help you plan your perfect journey</p>
+                        <h3 style="margin-bottom: 1rem; color: #0f172a;" data-i18n="services.cta.title">Get Free Consultation</h3>
+                        <p style="margin-bottom: 2rem; color: #64748b;" data-i18n="services.cta.body">Let our experts help you plan your perfect journey</p>
                         <a href="#contact" class="btn btn-primary">
-                            <span>Get Free Consultation</span>
+                            <span data-i18n="services.cta.button">Get Free Consultation</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -292,30 +297,37 @@ class TravelApp {
         `;
     }
 
-    renderPackageCards(type) {
-        return this.packages[type].map(pkg => `
+    renderServiceCards(type) {
+        return this.services[type].map(pkg => {
+            const baseKey = `services.cards.${pkg.key}`;
+            return `
             <div class="package-card fade-in-up">
-                ${pkg.badge ? `<div class="package-badge">${pkg.badge}</div>` : ''}
+                ${pkg.badge ? `<div class="package-badge" data-i18n="${baseKey}.badge">${pkg.badge}</div>` : ''}
                 <img src="${pkg.image}" alt="${pkg.title}" class="package-image" loading="lazy">
                 <div class="package-content">
-                    <h3 class="package-title">${pkg.title}</h3>
+                    <h3 class="package-title" data-i18n="${baseKey}.title">${pkg.title}</h3>
                     <div class="package-destination">
                         <i class="fas fa-map-marker-alt"></i>
-                        ${pkg.destination}
+                        <span data-i18n="${baseKey}.destination">${pkg.destination}</span>
                     </div>
                     <ul class="package-features">
-                        ${pkg.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        ${pkg.features.map((feature, index) => `
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span data-i18n="${baseKey}.features.${index}">${feature}</span>
+                            </li>
+                        `).join('')}
                     </ul>
                     <div class="package-footer">
                         <div>
-                            <div class="package-price">${pkg.price}</div>
-                            <div class="package-duration">${pkg.duration}</div>
+                            <div class="package-price" data-i18n="${baseKey}.price">${pkg.price}</div>
+                            <div class="package-duration" data-i18n="${baseKey}.duration">${pkg.duration}</div>
                         </div>
-                        <button class="btn btn-primary">Book Now</button>
+                        <button class="btn btn-primary" data-i18n="services.cards.cta">Book Now</button>
                     </div>
                 </div>
             </div>
-        `).join('');
+        `;}).join('');
     }
 
     renderContact() {
@@ -327,28 +339,28 @@ class TravelApp {
                         <p data-i18n="contact.subtitle">We're here to make your travel dreams come true.</p>
                     </div>
                     <div class="contact-grid">
-                        ${this.renderContactCard('whatsapp', 'WhatsApp', 'Instant messaging', 'fab fa-whatsapp')}
-                        ${this.renderContactCard('messenger', 'Messenger', 'Facebook chat', 'fab fa-facebook-messenger')}
-                        ${this.renderContactCard('instagram', 'Instagram', 'DM us anytime', 'fab fa-instagram')}
-                        ${this.renderContactCard('phone', 'Call Us', '24/7 support', 'fas fa-phone')}
+                        ${this.renderContactCard('whatsapp', 'contact.whatsapp.title', 'contact.whatsapp.body', 'fab fa-whatsapp', 'WhatsApp Business', 'Open a chat with a pre-filled message.')}
+                        ${this.renderContactCard('messenger', 'contact.messenger.title', 'contact.messenger.body', 'fab fa-facebook-messenger', 'Messenger', 'Facebook chat')}
+                        ${this.renderContactCard('instagram', 'contact.instagram.title', 'contact.instagram.body', 'fab fa-instagram', 'Instagram', 'DM us anytime')}
+                        ${this.renderContactCard('phone', 'contact.phone.title', 'contact.phone.body', 'fas fa-phone', 'Call Us', '24/7 support')}
                     </div>
                 </div>
             </section>
         `;
     }
 
-    renderContactCard(type, title, description, icon) {
+    renderContactCard(type, titleKey, bodyKey, icon, defaultTitle, defaultBody) {
         let link = "#";
         
         switch(type) {
             case 'whatsapp':
-                link = "https://wa.me/1234567890?text=Hi%20First%20Flight!%20I%20would%20like%20to%20get%20more%20information%20about%20your%20travel%20packages.";
+                link = "https://wa.me/1234567890?text=Hi%20AwabTravel!%20I%20would%20like%20to%20get%20more%20information%20about%20your%20travel%20services.";
                 break;
             case 'messenger':
-                link = "https://m.me/firstflight";
+                link = "https://m.me/awabtravel";
                 break;
             case 'instagram':
-                link = "https://instagram.com/firstflight";
+                link = "https://instagram.com/awabtravel";
                 break;
             case 'phone':
                 link = "tel:+1234567890";
@@ -360,15 +372,15 @@ class TravelApp {
                 <div class="contact-icon">
                     <i class="${icon}"></i>
                 </div>
-                <h3>${title}</h3>
-                <p>${description}</p>
+                <h3 data-i18n="${titleKey}">${defaultTitle}</h3>
+                <p data-i18n="${bodyKey}">${defaultBody}</p>
             </a>
         `;
     }
 
     renderFloatingCTA() {
         return `
-            <a href="https://wa.me/1234567890?text=Hi%20First%20Flight!%20I%20would%20like%20to%20get%20more%20information%20about%20your%20travel%20packages." 
+            <a href="https://wa.me/1234567890?text=Hi%20AwabTravel!%20I%20would%20like%20to%20get%20more%20information%20about%20your%20travel%20services."
                class="floating-cta btn btn-primary" target="_blank">
                 <i class="fab fa-whatsapp"></i>
                 <span data-i18n="cta.quick">Quick Connect</span>
@@ -380,7 +392,7 @@ class TravelApp {
         return `
             <footer class="footer">
                 <div class="container">
-                    <p data-i18n="footer.copy">© 2024 First Flight Travels. All rights reserved.</p>
+                    <p data-i18n="footer.copy">© 2024 AwabTravel. All rights reserved.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -428,15 +440,18 @@ class TravelApp {
         const tabBtns = document.querySelectorAll('.tab-btn');
         tabBtns.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
-        
+
         const tabType = e.target.dataset.tab;
         const packageContent = document.getElementById('package-content');
-        packageContent.innerHTML = this.renderPackageCards(tabType);
+        packageContent.innerHTML = this.renderServiceCards(tabType);
+        this.observeAnimatedElements();
+        const currentLang = document.getElementById('language-switcher')?.value || 'en';
+        setLanguage(currentLang);
     }
 
     initAnimations() {
         // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
+        this.animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in-up');
@@ -444,12 +459,14 @@ class TravelApp {
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
+        this.observeAnimatedElements();
 
         // Animate counters
         this.animateCounters();
+    }
+
+    observeAnimatedElements() {
+        document.querySelectorAll('.fade-in-up').forEach(el => this.animationObserver.observe(el));
     }
 
     animateCounters() {

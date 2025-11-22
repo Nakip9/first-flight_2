@@ -1,18 +1,19 @@
 {
-  "brand": "First Flight",
+  "brand": "AwabTravel",
   "hotline": {
     "text": "24/7 Hotline: +1 (555) 123-4567"
   },
   "nav": {
     "home": "Home",
     "destinations": "Destinations",
-    "packages": "Packages",
+    "services": "Services",
+    "about": "About",
     "contact": "Connect"
   },
   "hero": {
     "title": "Discover Your Next Adventure",
-    "subtitle": "Experience the world like never before with our curated travel packages and personalized service.",
-    "cta": "Explore Packages",
+    "subtitle": "Experience the world like never before with our curated travel services and personalized care.",
+    "cta": "Explore Services",
     "secondary": "Get Free Consultation"
   },
   "destinations": {
@@ -39,41 +40,79 @@
     "destinations": "Destinations",
     "support": "Support Hours"
   },
-  "packages": {
-    "title": "Featured Packages",
+  "services": {
+    "title": "Featured Services",
     "subtitle": "Ready-to-go itineraries designed by experts.",
     "tabs": {
-      "europe": "European Tours",
+      "europe": "European Journeys",
       "asia": "Asian Adventures",
       "hajj": "Hajj & Umrah"
     },
     "cards": {
-      "cities": {
-        "title": "Classic Cities",
-        "body": "7 days across Paris, Rome, and Barcelona with guided tours.",
-        "price": "Consultation Required"
+      "cta": "Book Now",
+      "europe": {
+        "grandTour": {
+          "title": "European Grand Tour",
+          "destination": "France, Italy, Spain",
+          "features": [
+            "6 Countries",
+            "Luxury Hotels",
+            "Guided Tours",
+            "Breakfast Included"
+          ],
+          "price": "Consultation Required",
+          "duration": "14 Days",
+          "badge": "Popular"
+        }
       },
-      "islands": {
-        "title": "Island Escape",
-        "body": "10 days in Bali and the Maldives with beachfront stays.",
-        "price": "Consultation Required"
-      },
-      "adventure": {
-        "title": "Adventure Trails",
-        "body": "12 days hiking, rafting, and balloon rides in Türkiye.",
-        "price": "Consultation Required"
+      "asia": {
+        "signature": {
+          "title": "Asian Adventure",
+          "destination": "Japan, Thailand, Vietnam",
+          "features": [
+            "Cultural Tours",
+            "Street Food",
+            "Temples",
+            "Local Guides"
+          ],
+          "price": "Consultation Required",
+          "duration": "12 Days",
+          "badge": "Cultural"
+        }
       },
       "hajj": {
-        "title": "Hajj Packages",
-        "body": "Spiritual journey to Makkah and Madinah.",
-        "price": "Consultation Required"
-      },
-      "umrah": {
-        "title": "Umrah Packages",
-        "body": "Comfortable Umrah with comprehensive services.",
-        "price": "Consultation Required"
-      },
-      "cta": "Book Now"
+        "hajj": {
+          "title": "Hajj Services",
+          "destination": "Makkah, Madinah",
+          "features": [
+            "5-Star Hotels",
+            "Ziyarat Tours",
+            "Expert Guides",
+            "Complete Visa Processing"
+          ],
+          "price": "Consultation Required",
+          "duration": "14-30 Days",
+          "badge": "Spiritual"
+        },
+        "umrah": {
+          "title": "Umrah Services",
+          "destination": "Makkah, Madinah",
+          "features": [
+            "Flexible Dates",
+            "Comfortable Accommodation",
+            "Transportation",
+            "Spiritual Guidance"
+          ],
+          "price": "Consultation Required",
+          "duration": "7-14 Days",
+          "badge": "Flexible"
+        }
+      }
+    },
+    "cta": {
+      "title": "Get Free Consultation",
+      "body": "Let our experts help you plan your perfect journey",
+      "button": "Get Free Consultation"
     }
   },
   "contact": {
@@ -100,7 +139,84 @@
   "cta": {
     "quick": "Quick Connect"
   },
+  "about": {
+    "hero": {
+      "title": "We are AwabTravel",
+      "subtitle": "Crafting journeys with heart, expertise, and meticulous care.",
+      "cta": "Explore our services",
+      "secondary": "Connect with our team",
+      "years": "Years of experience",
+      "travellers": "Travellers served",
+      "partners": "Trusted partners"
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "A boutique agency dedicated to seamless journeys.",
+      "start": {
+        "title": "Founded with passion",
+        "body": "AwabTravel began as a family dream to make travel feel effortless and inspiring."
+      },
+      "growth": {
+        "title": "Global reach",
+        "body": "We expanded through trusted partners, curating meaningful experiences on every continent."
+      },
+      "today": {
+        "title": "Service-first today",
+        "body": "Today we blend technology and hospitality to deliver responsive, human service."
+      }
+    },
+    "highlights": {
+      "title": "Why travelers choose us",
+      "subtitle": "Distinctive touches that keep journeys memorable.",
+      "curated": {
+        "title": "Curated by experts",
+        "body": "We pair local insight with modern planning tools."
+      },
+      "support": {
+        "title": "Always-on support",
+        "body": "Multilingual specialists guide you before, during, and after trips."
+      },
+      "trust": {
+        "title": "Safety and trust",
+        "body": "Licensed, insured, and focused on traveler wellbeing."
+      },
+      "responsive": {
+        "title": "Responsive changes",
+        "body": "We adjust plans quickly to keep your journey smooth."
+      }
+    },
+    "values": {
+      "title": "Our values",
+      "subtitle": "Guiding principles behind every itinerary.",
+      "hospitality": {
+        "title": "Hospitality first",
+        "body": "We treat every traveler like a valued guest."
+      },
+      "craft": {
+        "title": "Crafted details",
+        "body": "Every route, stay, and transfer is hand-checked for quality."
+      },
+      "safety": {
+        "title": "Safety and care",
+        "body": "We prioritize secure partners and transparent updates."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "body": "Smart tools keep information clear, fast, and accessible."
+      }
+    },
+    "cta": {
+      "title": "Ready to plan your next journey?",
+      "body": "Tell us about your goals and we'll craft a responsive plan.",
+      "primary": "View our services",
+      "secondary": "Talk to a specialist",
+      "badge": {
+        "title": "Hajj & Umrah expertise",
+        "body": "Dedicated guidance for spiritual journeys."
+      }
+    }
+  },
   "footer": {
-    "copy": "© 2024 First Flight Travels. All rights reserved."
+    "copy": "© 2024 AwabTravel. All rights reserved."
   }
 }
