@@ -10,6 +10,54 @@ class TravelApp {
             { key: 'indonesia', image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2' },
             { key: 'usa', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b' }
         ];
+        this.services = {
+            europe: [
+                {
+                    key: 'europe.grandTour',
+                    title: "European Grand Tour",
+                    destination: "France, Italy, Spain",
+                    image: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1",
+                    duration: "14 Days",
+                    price: "Consultation Required",
+                    features: ["6 Countries", "Luxury Hotels", "Guided Tours", "Breakfast Included"],
+                    badge: "Popular"
+                }
+            ],
+            asia: [
+                {
+                    key: 'asia.signature',
+                    title: "Asian Adventure",
+                    destination: "Japan, Thailand, Vietnam",
+                    image: "https://images.unsplash.com/photo-1540959733332-8ab4de18bee0",
+                    duration: "12 Days",
+                    price: "Consultation Required",
+                    features: ["Cultural Tours", "Street Food", "Temples", "Local Guides"],
+                    badge: "Cultural",
+                }
+            ],
+            hajj: [
+                {
+                    key: 'hajj.hajj',
+                    title: "Hajj Services",
+                    destination: "Makkah, Madinah",
+                    image: "https://images.unsplash.com/photo-1547994777-8d47e7d45e1f",
+                    duration: "14-30 Days",
+                    price: "Consultation Required",
+                    features: ["5-Star Hotels", "Ziyarat Tours", "Expert Guides", "Complete Visa Processing"],
+                    badge: "Spiritual",
+                },
+                {
+                    key: 'hajj.umrah',
+                    title: "Umrah Services",
+                    destination: "Makkah, Madinah",
+                    image: "https://images.unsplash.com/photo-1570554520913-f3eabf1b72a6",
+                    duration: "7-14 Days",
+                    price: "Consultation Required",
+                    features: ["Flexible Dates", "Comfortable Accommodation", "Transportation", "Spiritual Guidance"],
+                    badge: "Flexible",
+                }
+            ]
+        };
         this.init();
     }
 
@@ -87,6 +135,7 @@ class TravelApp {
                     <a href="#destinations" class="nav-link" data-i18n="nav.destinations">Destinations</a>
                     <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
                     <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                    <a href="/about" class="nav-link" data-i18n="nav.about">About</a>
                     <a href="#contact" class="nav-link" data-i18n="nav.contact">Connect</a>
                     <div class="language-switcher">
                         <select id="language-switcher">
@@ -247,6 +296,21 @@ class TravelApp {
                                 </div>
                             </div>
                         `).join('')}
+                    <div class="package-tabs">
+                        <button class="tab-btn active" data-tab="europe" data-i18n="services.tabs.europe">European Journeys</button>
+                        <button class="tab-btn" data-tab="asia" data-i18n="services.tabs.asia">Asian Adventures</button>
+                        <button class="tab-btn" data-tab="hajj" data-i18n="services.tabs.hajj">Hajj & Umrah</button>
+                    </div>
+                    <div class="packages-grid services-grid" id="package-content">
+                        ${this.renderServiceCards('europe')}
+                    </div>
+                    <div class="consultation-cta fade-in-up" style="text-align: center; margin-top: 3rem;">
+                        <h3 style="margin-bottom: 1rem; color: #0f172a;" data-i18n="services.cta.title">Get Free Consultation</h3>
+                        <p style="margin-bottom: 2rem; color: #64748b;" data-i18n="services.cta.body">Let our experts help you plan your perfect journey</p>
+                        <a href="#contact" class="btn btn-primary">
+                            <span data-i18n="services.cta.button">Get Free Consultation</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -281,6 +345,37 @@ class TravelApp {
                 </div>
             </section>
         `;
+    renderServiceCards(type) {
+        return this.services[type].map(pkg => {
+            const baseKey = `services.cards.${pkg.key}`;
+            return `
+            <div class="package-card fade-in-up">
+                ${pkg.badge ? `<div class="package-badge" data-i18n="${baseKey}.badge">${pkg.badge}</div>` : ''}
+                <img src="${pkg.image}" alt="${pkg.title}" class="package-image" loading="lazy">
+                <div class="package-content">
+                    <h3 class="package-title" data-i18n="${baseKey}.title">${pkg.title}</h3>
+                    <div class="package-destination">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="${baseKey}.destination">${pkg.destination}</span>
+                    </div>
+                    <ul class="package-features">
+                        ${pkg.features.map((feature, index) => `
+                            <li>
+                                <i class="fas fa-check"></i>
+                                <span data-i18n="${baseKey}.features.${index}">${feature}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <div class="package-footer">
+                        <div>
+                            <div class="package-price" data-i18n="${baseKey}.price">${pkg.price}</div>
+                            <div class="package-duration" data-i18n="${baseKey}.duration">${pkg.duration}</div>
+                        </div>
+                        <button class="btn btn-primary" data-i18n="services.cards.cta">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        `;}).join('');
     }
 
     renderContact() {
@@ -382,6 +477,19 @@ class TravelApp {
     toggleMobileMenu() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('active');
+    }
+
+    switchTab(e) {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        const tabType = e.target.dataset.tab;
+        const packageContent = document.getElementById('package-content');
+        packageContent.innerHTML = this.renderServiceCards(tabType);
+        this.observeAnimatedElements();
+        const currentLang = document.getElementById('language-switcher')?.value || 'en';
+        setLanguage(currentLang);
     }
 
     initAnimations() {

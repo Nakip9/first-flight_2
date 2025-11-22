@@ -1,6 +1,9 @@
 {
   "brand": "AwabTravel",
   "hotline": {"text": "24/7 Hotline: +1 (555) 123-4567"},
+  "hotline": {
+    "text": "24/7 Hotline: +1 (555) 123-4567"
+  },
   "nav": {
     "home": "Home",
     "destinations": "Destinations",
@@ -46,6 +49,76 @@
       "care": {"value": "24/7", "label": "Care"},
       "support": {"value": "15+", "label": "Years of expertise"},
       "trust": {"value": "100%", "label": "Tailored guidance"}
+    "tabs": {
+      "europe": "European Journeys",
+      "asia": "Asian Adventures",
+      "hajj": "Hajj & Umrah"
+    },
+    "cards": {
+      "cta": "Book Now",
+      "europe": {
+        "grandTour": {
+          "title": "European Grand Tour",
+          "destination": "France, Italy, Spain",
+          "features": [
+            "6 Countries",
+            "Luxury Hotels",
+            "Guided Tours",
+            "Breakfast Included"
+          ],
+          "price": "Consultation Required",
+          "duration": "14 Days",
+          "badge": "Popular"
+        }
+      },
+      "asia": {
+        "signature": {
+          "title": "Asian Adventure",
+          "destination": "Japan, Thailand, Vietnam",
+          "features": [
+            "Cultural Tours",
+            "Street Food",
+            "Temples",
+            "Local Guides"
+          ],
+          "price": "Consultation Required",
+          "duration": "12 Days",
+          "badge": "Cultural"
+        }
+      },
+      "hajj": {
+        "hajj": {
+          "title": "Hajj Services",
+          "destination": "Makkah, Madinah",
+          "features": [
+            "5-Star Hotels",
+            "Ziyarat Tours",
+            "Expert Guides",
+            "Complete Visa Processing"
+          ],
+          "price": "Consultation Required",
+          "duration": "14-30 Days",
+          "badge": "Spiritual"
+        },
+        "umrah": {
+          "title": "Umrah Services",
+          "destination": "Makkah, Madinah",
+          "features": [
+            "Flexible Dates",
+            "Comfortable Accommodation",
+            "Transportation",
+            "Spiritual Guidance"
+          ],
+          "price": "Consultation Required",
+          "duration": "7-14 Days",
+          "badge": "Flexible"
+        }
+      }
+    },
+    "cta": {
+      "title": "Get Free Consultation",
+      "body": "Let our experts help you plan your perfect journey",
+      "button": "Get Free Consultation"
     }
   },
   "contact": {
@@ -58,4 +131,105 @@
   },
   "cta": {"quick": "Quick Connect"},
   "footer": {"copy": "© 2024 AwabTravel. All rights reserved."}
+    "cta": "Start now",
+    "whatsapp": {
+      "title": "WhatsApp Business",
+      "body": "Open a chat with a pre-filled message."
+    },
+    "messenger": {
+      "title": "Messenger",
+      "body": "Message us directly on Facebook."
+    },
+    "instagram": {
+      "title": "Instagram",
+      "body": "See stories and DM us in seconds."
+    },
+    "phone": {
+      "title": "Call Us",
+      "body": "Tap to dial our concierge desk."
+    }
+  },
+  "cta": {
+    "quick": "Quick Connect"
+  },
+  "about": {
+    "hero": {
+      "title": "We are AwabTravel",
+      "subtitle": "Crafting journeys with heart, expertise, and meticulous care.",
+      "cta": "Explore our services",
+      "secondary": "Connect with our team",
+      "years": "Years of experience",
+      "travellers": "Travellers served",
+      "partners": "Trusted partners"
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "A boutique agency dedicated to seamless journeys.",
+      "start": {
+        "title": "Founded with passion",
+        "body": "AwabTravel began as a family dream to make travel feel effortless and inspiring."
+      },
+      "growth": {
+        "title": "Global reach",
+        "body": "We expanded through trusted partners, curating meaningful experiences on every continent."
+      },
+      "today": {
+        "title": "Service-first today",
+        "body": "Today we blend technology and hospitality to deliver responsive, human service."
+      }
+    },
+    "highlights": {
+      "title": "Why travelers choose us",
+      "subtitle": "Distinctive touches that keep journeys memorable.",
+      "curated": {
+        "title": "Curated by experts",
+        "body": "We pair local insight with modern planning tools."
+      },
+      "support": {
+        "title": "Always-on support",
+        "body": "Multilingual specialists guide you before, during, and after trips."
+      },
+      "trust": {
+        "title": "Safety and trust",
+        "body": "Licensed, insured, and focused on traveler wellbeing."
+      },
+      "responsive": {
+        "title": "Responsive changes",
+        "body": "We adjust plans quickly to keep your journey smooth."
+      }
+    },
+    "values": {
+      "title": "Our values",
+      "subtitle": "Guiding principles behind every itinerary.",
+      "hospitality": {
+        "title": "Hospitality first",
+        "body": "We treat every traveler like a valued guest."
+      },
+      "craft": {
+        "title": "Crafted details",
+        "body": "Every route, stay, and transfer is hand-checked for quality."
+      },
+      "safety": {
+        "title": "Safety and care",
+        "body": "We prioritize secure partners and transparent updates."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "body": "Smart tools keep information clear, fast, and accessible."
+      }
+    },
+    "cta": {
+      "title": "Ready to plan your next journey?",
+      "body": "Tell us about your goals and we'll craft a responsive plan.",
+      "primary": "View our services",
+      "secondary": "Talk to a specialist",
+      "badge": {
+        "title": "Hajj & Umrah expertise",
+        "body": "Dedicated guidance for spiritual journeys."
+      }
+    }
+  },
+  "footer": {
+    "copy": "© 2024 AwabTravel. All rights reserved."
+  }
 }
