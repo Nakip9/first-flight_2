@@ -2,6 +2,14 @@ import { initI18n, setLanguage } from './i18n.js';
 
 class TravelApp {
     constructor() {
+        this.services = [
+            { key: 'saudi', image: 'https://images.unsplash.com/photo-1523731407965-2430cd12f5e4' },
+            { key: 'france', image: 'https://images.unsplash.com/photo-1502602898536-47ad22581b52' },
+            { key: 'japan', image: 'https://images.unsplash.com/photo-1540959733332-8ab4de18bee0' },
+            { key: 'turkiye', image: 'https://images.unsplash.com/photo-1528181304800-259b08848526' },
+            { key: 'indonesia', image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2' },
+            { key: 'usa', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b' }
+        ];
         this.services = {
             europe: [
                 {
@@ -90,6 +98,7 @@ class TravelApp {
                 ${this.renderDestinations()}
                 ${this.renderStats()}
                 ${this.renderServices()}
+                ${this.renderAbout()}
                 ${this.renderContact()}
             </main>
             ${this.renderFloatingCTA()}
@@ -125,6 +134,7 @@ class TravelApp {
                     <a href="#hero" class="nav-link" data-i18n="nav.home">Home</a>
                     <a href="#destinations" class="nav-link" data-i18n="nav.destinations">Destinations</a>
                     <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                    <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
                     <a href="/about" class="nav-link" data-i18n="nav.about">About</a>
                     <a href="#contact" class="nav-link" data-i18n="nav.contact">Connect</a>
                     <div class="language-switcher">
@@ -276,6 +286,16 @@ class TravelApp {
                         <h2 data-i18n="services.title">Featured Services</h2>
                         <p data-i18n="services.subtitle">Ready-to-go itineraries designed by experts.</p>
                     </div>
+                    <div class="packages-grid services-grid" id="package-content">
+                        ${this.services.map(pkg => `
+                            <div class="package-card fade-in-up">
+                                <img src="${pkg.image}" alt="${pkg.key}" class="package-image" loading="lazy">
+                                <div class="package-content">
+                                    <h3 class="package-title" data-i18n="services.countries.${pkg.key}">${pkg.key}</h3>
+                                    <p class="package-duration" data-i18n="services.cta.body">Let our experts help you plan your perfect journey</p>
+                                </div>
+                            </div>
+                        `).join('')}
                     <div class="package-tabs">
                         <button class="tab-btn active" data-tab="europe" data-i18n="services.tabs.europe">European Journeys</button>
                         <button class="tab-btn" data-tab="asia" data-i18n="services.tabs.asia">Asian Adventures</button>
@@ -297,6 +317,34 @@ class TravelApp {
         `;
     }
 
+    renderAbout() {
+        return `
+            <section id="about" class="section">
+                <div class="container">
+                    <div class="section-header fade-in-up">
+                        <h2 data-i18n="about.title">About AwabTravel</h2>
+                        <p data-i18n="about.subtitle">Travel made simple, memorable, and bilingual.</p>
+                    </div>
+                    <div class="about-hero__content">
+                        <div class="timeline fade-in-up">
+                            <div class="timeline-item">
+                                <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+                                <h3 data-i18n="about.story">Family-built agency that crafts smooth journeys.</h3>
+                                <p data-i18n="about.body">We pair local expertise with modern tools so every trip feels personal.</p>
+                            </div>
+                        </div>
+                        <div class="about-hero__stats">
+                            ${['care', 'support', 'trust'].map(key => `
+                                <div class="stat-card fade-in-up">
+                                    <div class="stat-number" data-i18n="about.stats.${key}.value">24/7</div>
+                                    <div class="stat-label" data-i18n="about.stats.${key}.label">Support</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        `;
     renderServiceCards(type) {
         return this.services[type].map(pkg => {
             const baseKey = `services.cards.${pkg.key}`;
@@ -407,15 +455,10 @@ class TravelApp {
     initEventListeners() {
         // Nav scroll effect
         window.addEventListener('scroll', this.handleScroll.bind(this));
-        
+
         // Mobile menu
         document.querySelector('.mobile-menu-btn')?.addEventListener('click', this.toggleMobileMenu.bind(this));
-        
-        // Tab switching
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => this.switchTab(e));
-        });
-        
+
         // Language switcher
         document.getElementById('language-switcher')?.addEventListener('change', (e) => {
             setLanguage(e.target.value);
