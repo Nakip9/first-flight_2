@@ -1,6 +1,6 @@
-# First Flight Travels (Flask + i18n)
+# AwabTravel (Flask + i18n)
 
-A light-blue themed travel landing page with English/Arabic i18n, RTL support, and a Flask backend that delivers contact form submissions via email.
+A bilingual travel experience site for AwabTravel with English/Arabic i18n, RTL support, and a Flask backend that delivers contact form submissions via email.
 
 ## Project Structure
 
@@ -21,6 +21,7 @@ first-flight/
 │       ├── ar.json
 │       └── en.json
 └── templates/
+    ├── about.html
     └── index.html
 ```
 

@@ -23,6 +23,11 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 @app.post("/contact")
 def contact():
     data = request.get_json(force=True)
@@ -39,7 +44,7 @@ def contact():
 
     try:
         msg = Message(
-            subject="First Flight Travels Contact",
+            subject="AwabTravel Contact",
             recipients=[recipient],
             body=f"Name: {name}\nEmail: {email}\n\n{message}",
             reply_to=email,
